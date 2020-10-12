@@ -11,7 +11,7 @@ namespace TestApp
     {
         Task<List<Transaction>> GetTransactions();
         Task<Transaction> GetTransactionById(int id);
-        Task EditTransaction(int id);
+        Task EditTransaction(Transaction transaction);
         Task DeleteTransaction(int id);
         Task CreateTransaction(Transaction transaction);
     }

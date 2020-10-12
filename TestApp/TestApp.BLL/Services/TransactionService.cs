@@ -33,15 +33,15 @@ namespace TestApp.BLL.Services
             }
         }
 
-        public async Task EditTransaction(int id)
+        public async Task EditTransaction(Transaction transaction)
         {
-            if (await _repository.Get(id) == null)
+            if (await _repository.Get(transaction.Id) == null)
             {
-                throw new Exception($"Not found transaction with id={id}");
+                throw new Exception($"Not found transaction with id={transaction.Id}");
             }
             else
             {
-                var projectEntity = await _repository.Get(id);
+                var projectEntity = await _repository.Get(transaction.Id);
                 await _repository.Update(projectEntity);
             }
         }
