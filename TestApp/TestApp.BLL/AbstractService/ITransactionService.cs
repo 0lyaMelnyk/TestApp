@@ -2,16 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TestApp.BLL.DTO;
 using TestApp.DAL.Models;
 
 namespace TestApp
 {
     public interface ITransactionService
     {
-        List<Transaction> GetTransactions();
-        Transaction GetTransactionById(int id);
-        void EditTransaction(int id);
-        void DeleteTransaction(int id);
-        int CreateTransaction();
+        Task<List<Transaction>> GetTransactions();
+        Task<Transaction> GetTransactionById(int id);
+        Task EditTransaction(int id);
+        Task DeleteTransaction(int id);
+        Task CreateTransaction(Transaction transaction);
     }
 }
