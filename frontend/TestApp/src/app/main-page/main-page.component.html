@@ -1,0 +1,78 @@
+<mat-toolbar>
+    <span>Test application</span>
+</mat-toolbar>
+<div class="main-container">
+    <mat-card class="left-container">
+        <mat-card-title class="tr-header">
+        Transactions
+        </mat-card-title>
+        <mat-card-content>
+            <mat-divider></mat-divider>
+
+            Something
+        </mat-card-content>
+    </mat-card>
+    <div class="right-container">
+        <div class="tools">
+            <div class="selecting">
+                <mat-form-field appearance="fill">
+                    <mat-label>Status</mat-label>
+                    <mat-select>
+                      <mat-option>
+                          Status1
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  <mat-form-field appearance="fill">
+                    <mat-label>Type</mat-label>
+                    <mat-select>
+                      <mat-option>
+                          Type1
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+            </div>
+            <div class="buttons">
+                <button mat-raised-button>Import</button>
+                <button mat-raised-button>Export</button>
+            </div>
+        </div>
+    </div>
+    <div class="table">
+        <table mat-table [dataSource]="dataSource">
+
+            <!-- Position Column -->
+            <ng-container matColumnDef="id">
+              <th mat-header-cell *matHeaderCellDef> Id </th>
+              <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+            </ng-container>
+        
+            <!-- Name Column -->
+            <ng-container matColumnDef="status">
+              <th mat-header-cell *matHeaderCellDef> Status </th>
+              <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+            </ng-container>
+        
+            <!-- Weight Column -->
+            <ng-container matColumnDef="type">
+              <th mat-header-cell *matHeaderCellDef> Type </th>
+              <td mat-cell *matCellDef="let element"> {{element.type}} </td>
+            </ng-container>
+        
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="clientName">
+              <th mat-header-cell *matHeaderCellDef> Client name </th>
+              <td mat-cell *matCellDef="let element"> {{element.clientName}} </td>
+            </ng-container>
+            <ng-container matColumnDef="amount">
+                <th mat-header-cell *matHeaderCellDef> Amount </th>
+                <td mat-cell *matCellDef="let element"> {{element.amount}} </td>
+              </ng-container>
+        
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+        
+          <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+    </div>
+</div>
