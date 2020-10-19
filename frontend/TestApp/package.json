@@ -22,7 +22,9 @@
     "@angular/platform-browser-dynamic": "~10.0.6",
     "@angular/router": "~10.0.6",
     "bootstrap": "^4.5.3",
+    "export-to-csv": "^0.2.1",
     "ngx-bootstrap": "^6.1.0",
+    "ngx-csv-parser": "0.0.6",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.3"

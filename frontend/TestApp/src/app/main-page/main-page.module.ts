@@ -8,6 +8,9 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { FormsModule } from '@angular/forms';
+import { NgxCsvParserModule } from 'ngx-csv-parser';
+
 @NgModule({
   declarations: [MainPageComponent],
   imports: [
@@ -18,7 +21,9 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MatButtonModule,
     MatDividerModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    FormsModule,
+    NgxCsvParserModule
   ],
   exports: [MainPageComponent]
 })
